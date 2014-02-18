@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>currentDocument</key>
+	<string>deplacer GSMSHIELD dans librairies.md</string>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>deplacer GSMSHIELD dans librairies.md</string>
+			<key>lastUsed</key>
+			<date>2014-02-18T20:57:12Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>module_sms_chaudiere.ino</string>
+			<key>lastUsed</key>
+			<date>2014-02-18T20:57:12Z</date>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>200</integer>
+	<key>metaData</key>
+	<dict>
+		<key>deplacer GSMSHIELD dans librairies.md</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>10</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>module_sms_chaudiere.ino</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>10</integer>
+				<key>line</key>
+				<integer>10</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>openDocuments</key>
+	<array>
+		<string>module_sms_chaudiere.ino</string>
+		<string>deplacer GSMSHIELD dans librairies.md</string>
+	</array>
+	<key>showFileHierarchyDrawer</key>
+	<false/>
+	<key>windowFrame</key>
+	<string>{{8, 0}, {904, 778}}</string>
+</dict>
+</plist>
