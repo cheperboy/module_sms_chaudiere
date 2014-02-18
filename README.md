@@ -7,4 +7,4 @@ pour utiliser le shield officiel
 
 pour utiliser le shield sim900
 
-* COPIER le dossier `/_GSMSHIELD` qui se trouve a la racine du projet vers `librairies`
+* **COPIER** le dossier `/_GSMSHIELD` qui se trouve a la racine du projet vers `librairies`

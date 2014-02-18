@@ -39,6 +39,8 @@ const int SOFTWARE_RESET_MAX = 5;
 const int TIME_BEFORE_DETECTION = 30 * 60 * 1000;
 
 // Variables programme
+enum type_state {DERANGEMENT, WAIT_ACK, TIMER_OVER, NORMAL};
+type_state state = NORMAL;
 boolean started = false; //module gsm a fini le boot
 int i = 0; // dans boucle for de la loop
 int retry = 0;
@@ -120,35 +122,9 @@ void loop()
 				state = DERANGEMENT; 
 			}
 			break; 
-		}
-		
-	else {		
-		if (state_derangement() && time_before_detection.check()) { derangement = true; }
-
-		if (derangement && state_ack()) { 
-			led_off(PINOUT_ACK);
-			derangement    = false;
-			record_process = false;
-			derangement    = false;
-			time_before_detection.reset();
-		}
-
-		// process derangement and software_reset
-		if (derangement && !record_process) {
-			record_process = true;
-			led_on(PINOUT_ACK); // indication wait for ack
-			send_SMS();
-			if (sent_all_ok == false) {
-				delay(DELAY_BEFORE_RETRY);
-				send_SMS();
-				if (sent_all_ok == false) {
-					led_on(PINOUT_DEFAUT);
-				}
-			}
-			//
-		}
   }
 }
+//TODO integrer le code commente ci-dessous dans le case ci-dessus
 /*
 void loop() 
 {
