@@ -3,36 +3,44 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>deplacer GSMSHIELD dans librairies.md</string>
+	<string>module_sms_chaudiere.ino</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
-			<string>deplacer GSMSHIELD dans librairies.md</string>
+			<string>module_sms_chaudiere.ino</string>
 			<key>lastUsed</key>
-			<date>2014-02-18T20:57:12Z</date>
+			<date>2014-02-18T22:16:36Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>module_sms_chaudiere.ino</string>
+			<string>README.md</string>
 			<key>lastUsed</key>
-			<date>2014-02-18T20:57:12Z</date>
+			<date>2014-02-18T22:16:36Z</date>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>_GSMSHIELD</string>
+			<key>regexFolderFilter</key>
+			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>sourceDirectory</key>
+			<string>_GSMSHIELD</string>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>deplacer GSMSHIELD dans librairies.md</key>
+		<key>README.md</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>12</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>9</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -44,20 +52,20 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>10</integer>
+				<integer>66</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>126</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>115</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>module_sms_chaudiere.ino</string>
-		<string>deplacer GSMSHIELD dans librairies.md</string>
+		<string>README.md</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>

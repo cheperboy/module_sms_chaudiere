@@ -36,15 +36,15 @@ const byte PINOUT_DEFAUT = 6;   // indication de defaut permanent (trop d'echec 
 //constantes et paramètres du logiciel
 const int DELAY_BEFORE_RETRY = 20 * 1000;
 const int SOFTWARE_RESET_MAX = 5;
-const int TIME_BEFORE_DETECTION = 30 * 60 * 1000;
+const int TIME_BEFORE_DETECTION = 20 * 60 * 1000;
 
 // Variables programme
 enum type_state {DERANGEMENT, WAIT_ACK, TIMER_OVER, NORMAL};
 type_state state = NORMAL;
+Metro delay_before_retry = Metro(DELAY_BEFORE_RETRY); 
 boolean started = false; //module gsm a fini le boot
 int i = 0; // dans boucle for de la loop
 int retry = 0;
-char* imei = "                           ";
 
 const char* list_user[] = {"0663104827", "0688649102"};
 const int list_user_size = sizeof(list_user)/sizeof(*list_user);
@@ -100,6 +100,7 @@ NORMAL
 	if detection goto DERANGEMENT	
 	if + pressed timer +15min
 	if - pressed timer -15min
+	else wait for timer over
 */
 void loop() 
 {
@@ -109,17 +110,39 @@ void loop()
   if(!started) {
 		resetGSM();
 	}
-	
 	switch (state){
+		
 		case DERANGEMENT: 
+			send_SMS();
+			if (sent_all_ok == false) {
+				delay(DELAY_BEFORE_RETRY);
+				send_SMS();
+				if (sent_all_ok == false) {
+					led_on(PINOUT_DEFAUT);
+				}
+			}
+			state = WAIT_ACK;
 			break; 
-		case WAIT_ACK: 
-			break; 
+		
+		case WAIT_ACK:
+			if (get_ack()){
+				delay_before_retry.reset();
+				state = NORMAL;
+			}
+			break;
+			
 		case TIMER_OVER: 
 			break; 
+
 		case NORMAL:
-			if (state_derangement() && time_before_detection.check()) { 
-				state = DERANGEMENT; 
+			if (delayInactif.check()) {
+				if (get_derangement()){
+					state = DERANGEMENT;
+				}
+			}
+			if (get_time_plus_pressed()) {
+				delayInactif.reset();
+				Serial.println("inactif pendant 15 minutes");
 			}
 			break; 
   }
@@ -206,7 +229,7 @@ boolean send_generic_SMS(const char *number)
 	return(ret_val);
 }
 
-boolean state_derangement()
+boolean get_derangement()
 {
 	if (digitalRead(PIN_DERANGEMENT) == HIGH){
 		return true;
@@ -214,7 +237,7 @@ boolean state_derangement()
 	else return false;
 }
 
-boolean state_ack()
+boolean get_ack()
 {
 	if (digitalRead(PIN_ACK) == HIGH){
 		return true;
